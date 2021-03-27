@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // Entry nos permite decir el punto de entrada de nuestra aplicación
@@ -13,13 +14,13 @@ module.exports = {
     },
     resolve: {
         // Aqui ponemos las extensiones que tendremos en nuestro proyecto para webpack los lea
-        extensions: ['.js']
+        extensions: ['.js', '.mjs']
     },
     module: {
         rules: [
           {
             // Test declara que extensión de archivos aplicara el loader
-            test: /\.js$/,
+            test: /\.m?js$/,
             // Use es un arreglo u objeto donde dices que loader aplicaras
             use: {
               loader: "babel-loader"
@@ -28,5 +29,12 @@ module.exports = {
             exclude: /node_modules/
           }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            inject: 'body',
+            template: './public/index.html',
+            filename: './index.html'
+        })
+    ]
 }
