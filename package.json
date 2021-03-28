@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
+    "build": "node ./scripts/create-env.js && webpack --config webpack.config.js",
     "dev": "webpack --config webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gndx/js-portfolio.git"
+    "url": "git+https://github.com/IsaiasMorochi/learning-webpack"
   },
   "keywords": [
     "javascript",
@@ -20,9 +20,9 @@
   "author": "Isaias Morochi <imorochi.dev@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gndx/js-portfolio/issues"
+    "url": "https://github.com/IsaiasMorochi/learning-webpack/issues"
   },
-  "homepage": "https://github.com/gndx/js-portfolio#readme",
+  "homepage": "https://github.com/IsaiasMorochi/learning-webpacko#readme",
   "devDependencies": {
     "@babel/core": "^7.13.13",
     "@babel/plugin-transform-runtime": "^7.13.10",
