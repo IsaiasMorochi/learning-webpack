@@ -24,13 +24,13 @@ const Template = async () => {
         </div>
         <div class="card_social">
           <a href="https://twitter.com/isaias_morochi">
-            <img src="../src/assets/images/twitter.png" />
+            <img src="assets/images/twitter.png" />
           </a>
           <a href="https://github.com/IsaiasMorochi">
-            <img src="../src/assets/images/github.png" />
+            <img src="assets/images/github.png" />
           </a>
           <a href="https://www.linkedin.com/in/isaias-morochi/">
-            <img src="../src/assets/images/linkedin.png" />
+            <img src="assets/images/linkedin.png" />
           </a>
         </div>
       </div>
