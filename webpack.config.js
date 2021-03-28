@@ -5,6 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     // Entry nos permite decir el punto de entrada de nuestra aplicación
@@ -18,6 +19,7 @@ module.exports = {
         filename: '[name].[contenthash].js',
         assetModuleFilename: 'assets/images/[hash][ext][query]'
     },
+    mode: 'production',
     resolve: {
         // Aqui ponemos las extensiones que tendremos en nuestro proyecto para webpack los lea
         extensions: ['.js', '.mjs'],
@@ -90,6 +92,14 @@ module.exports = {
           ]
         }),
         new Dotenv(),
+        new CleanWebpackPlugin({
+          cleanOnceBeforeBuildPatterns: [
+            path.resolve(__dirname, 'dist/css/*.css'),
+            path.resolve(__dirname, 'dist/js/*.js'),
+            path.resolve(__dirname, 'dist/assets/**'),
+          ],
+          verbose: true,
+        }),
     ],
     optimization: {
       minimize: true,
